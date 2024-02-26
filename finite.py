@@ -1,20 +1,35 @@
 from llist import LList, Node, append
 
-
 def length(lst):
     """return the length of a finite linked list"""
-    pass  # delete this line when you add your code
-
+    count = 0
+    node = lst.head
+    while node:
+        count += 1
+        node = node.next
+    return count
 
 def llprint(lst):
     """print a finite linked list"""
-    pass  # delete this line when you add your code
-
+    node = lst.head
+    while node:
+        print(node.val, end="")
+        node = node.next
+    print()
 
 if __name__ == "__main__":
+    linkList = LList()
+    values = [1, 2, 4, 8, 12, 32, 64, 128, 256, 512]
 
-    pass  # delete this line when you add your code below
+    for value in values:
+        append(linkList, Node(value))
 
-    #
-    # your tests go here
-    #
+    #prints the list
+    llprint(linkList)
+
+    #prints the length of the list
+    print(length(linkList), "is the length of the linked list")
+
+    #prints the length of lst from genfinite.py
+    from genfinite import lst
+    print(length(lst))
